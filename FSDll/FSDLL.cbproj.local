@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2020.02.25 21:50:34.329,=C:\Users\Bryak\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2020.02.25 21:50:34.689,=C:\Users\Bryak\Documents\Embarcadero\Studio\Projects\File1.cpp</Transaction>
+    <Transaction>2020.02.25 22:08:56.556,=C:\Users\Bryak\Documents\Embarcadero\Studio\Projects\File2.h</Transaction>
+    <Transaction>2020.02.25 22:18:14.983,C:\Users\Bryak\Documents\GitHub\FS-Check\FSDll\FSDLL.cpp=C:\Users\Bryak\Documents\Embarcadero\Studio\Projects\File1.cpp</Transaction>
+    <Transaction>2020.02.25 22:18:24.159,C:\Users\Bryak\Documents\GitHub\FS-Check\FSDll\FSDLL.h=C:\Users\Bryak\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2020.02.25 22:18:38.442,C:\Users\Bryak\Documents\GitHub\FS-Check\FSDll\FSDLL.cbproj=C:\Users\Bryak\Documents\Embarcadero\Studio\Projects\Project1.cbproj</Transaction>
+  </Transactions>
+</BorlandProject>
