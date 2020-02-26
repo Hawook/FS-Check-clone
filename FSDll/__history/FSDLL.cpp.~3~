@@ -6,6 +6,31 @@
 #include "stdio.h"
 #include <windows.h>
 
+typedef struct _BIOS_PARAM_BLOCK
+{
+   BYTE jumpCode[3];
+   BYTE oemName[8];
+   WORD bytes_Sector;
+   BYTE sec_Cluster;
+   WORD size_Sector_Reserved;
+   BYTE fatCount;
+   WORD Max_Root_Entry;
+   WORD Total_Sector_FS;
+   BYTE Media_Type;
+   WORD sectors_per_fat;
+   WORD sectors_per_track;
+   WORD total_Head_Count;
+   DWORD no_Sectors_Before_Part;
+   DWORD no_Sector_FS32;
+   BYTE BIOS_13h_Drive_No;
+   BYTE reserved;
+   BYTE ext_Boot_Part_Signature;
+   DWORD vol_Serial_Number;
+   BYTE vol_Lebel_Name[11];
+   BYTE FS_Type[8];
+   BYTE boot_Code[448];
+   WORD signature;
+} BPB;
 BYTE bBootSector[512];
 memset(bBootSector, 0, 512);
 DWORD dwBytesRead(0);
