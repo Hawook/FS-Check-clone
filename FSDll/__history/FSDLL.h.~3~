@@ -1,12 +1,6 @@
 #pragma once
 #ifdef _WIN32
 #include <tchar.h>
-#include <iostream>
-#include <windows.h>
-#include <Winioctl.h>
-#include <wchar.h>
-#include <algorithm>
-#include <stdio.h>
 #endif
 
 using namespace std;

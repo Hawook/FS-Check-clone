@@ -34,7 +34,7 @@ void PrintBootSectInfo(NTFS_BootRecord _check)
 	printf("Volume Serial Number: %dl\n", _check.volumeSerialNumber);
 	printf("End of Sector Marker: 0x%X\n", _check.endMarker);
 
-	/*printf("Информация о диске:\n");
+	printf("Информация о диске:\n");
 	printf("=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*\n");
 	printf("Инструкция по сборке, переход к загрузочному коду: 0x%X\n", _check.jumpCode);
 	printf("Версия производителя: %s\n", _check.oemID);
@@ -48,8 +48,8 @@ void PrintBootSectInfo(NTFS_BootRecord _check)
 	printf("Общее количество секторов: %dll\n", _check.totalSectors);
 	printf("Номер логического кластера для файла $MFT: %dl\n", _check.lcnForSMFT);
 	printf("Номер логического кластера для файла $MFTMirr: %dl\n", _check.lcnForSMFTMirr);
-	printf("Количество кластеров в сегменте записи о файле: %d\n", _check.clusterPerFileRecordSegm);
-	printf("Количество кластеров в буфере индексов: %d\n", _check.clusterPerIndexBuff);
-	printf("Серийный номер диска: %dl\n", _check.volumeSerialNumber);
-	printf("Маркер конца сектора: 0x%X\n", _check.endMarker); */
+	printf("Количество кластеров с сегменте записи о файле: %d\n", _check.clusterPerFileRecordSegm);
+	printf("Clusters Per Index Buffer: %d\n", _check.clusterPerIndexBuff);
+	printf("Volume Serial Number: %dl\n", _check.volumeSerialNumber);
+	printf("End of Sector Marker: 0x%X\n", _check.endMarker);
 }
