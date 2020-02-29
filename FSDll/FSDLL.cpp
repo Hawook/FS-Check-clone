@@ -1,17 +1,15 @@
 #pragma hdrstop
 #pragma argsused
-#include "FSDLL.h"
 #include <iostream>
 #include <string>
 #include "stdio.h"
 #include <windows.h>
+#include <Winioctl.h>
+#include <wchar.h>
+#include <algorithm>
+#include "FSDLL.h"
 
 using namespace std;
-
-BYTE bBootSector[512];
-memset(bBootSector, 0, 512);
-DWORD dwBytesRead(0);
-BPB _bpb;
 
 void PrintBootSectInfo(NTFS_BootRecord _check)
 {
@@ -52,4 +50,69 @@ void PrintBootSectInfo(NTFS_BootRecord _check)
 	printf("Количество кластеров в буфере индексов: %d\n", _check.clusterPerIndexBuff);
 	printf("Серийный номер диска: %dl\n", _check.volumeSerialNumber);
 	printf("Маркер конца сектора: 0x%X\n", _check.endMarker); */
+}
+string FindFSName(string diskName)
+{
+	char NameBuffer[MAX_PATH];
+	char _SysBuffer[MAX_PATH];
+	DWORD VSNumber;
+	DWORD MCLength;
+	DWORD FileSF;
+
+	string forVolumeInf = diskName + ":\\";
+
+
+	if (GetVolumeInformationA(forVolumeInf.c_str(), NameBuffer, sizeof(NameBuffer),
+		&VSNumber, &MCLength, &FileSF, _SysBuffer, sizeof(_SysBuffer)))
+	{
+		cout << "Detected file system is " << _SysBuffer << endl << endl;
+		string SysName = _SysBuffer;
+
+		return SysName;
+	}
+
+	return string("");
+}
+
+bool fsIsSupported(string SysName)
+{
+	if (SysName.find("NTFS") == string::npos)
+	{
+		return false;
+	}
+	return true;
+}
+
+bool getFsInfo(string diskNameFormated, NTFS_BootRecord * _check)
+{
+	BYTE bBootSector[512];
+	memset(bBootSector, 0, 512);
+	DWORD dwBytesRead(0);
+
+	HANDLE hDisk = CreateFileA(diskNameFormated.c_str(),
+		GENERIC_READ, FILE_SHARE_READ | FILE_SHARE_WRITE | FILE_SHARE_DELETE,
+		NULL, OPEN_EXISTING, 0, NULL);
+	if (hDisk == INVALID_HANDLE_VALUE)
+	{
+		wprintf(L"CreateFile() failed! You'll rrobably need to run the app as administrator\n");
+		wprintf(L" %u \n", GetLastError());
+		if (CloseHandle(hDisk) != 0)
+			wprintf(L"hVolume handle was closed successfully!\n");
+		else
+		{
+			wprintf(L"Failed to close hVolume handle!\n");
+		}
+		return false;
+	}
+
+	if (!ReadFile(hDisk, bBootSector, 512, &dwBytesRead, NULL))
+	{
+		printf("Error in reading the disk\n");
+		CloseHandle(hDisk);
+		return false;
+	}
+
+	CloseHandle(hDisk);
+	*_check = *reinterpret_cast<NTFS_BootRecord*>(bBootSector);
+	return true;
 }

@@ -39,3 +39,4 @@ typedef struct
 	BYTE bootstrap[426];
 	WORD endMarker;
 } NTFS_BootRecord;
+#pragma pack()
