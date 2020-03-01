@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{1933C21F-3C95-484B-8979-2E6DEAE0B993}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="FSDll\FSDLL.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="FSClient\Project1.cbproj">
+            <Dependencies>FSDll\FSDLL.cbproj</Dependencies>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="FSDLL">
+        <MSBuild Projects="FSDll\FSDLL.cbproj"/>
+    </Target>
+    <Target Name="FSDLL:Clean">
+        <MSBuild Projects="FSDll\FSDLL.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FSDLL:Make">
+        <MSBuild Projects="FSDll\FSDLL.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="Project1" DependsOnTargets="FSDLL">
+        <MSBuild Projects="FSClient\Project1.cbproj"/>
+    </Target>
+    <Target Name="Project1:Clean" DependsOnTargets="FSDLL:Clean">
+        <MSBuild Projects="FSClient\Project1.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Project1:Make" DependsOnTargets="FSDLL:Make">
+        <MSBuild Projects="FSClient\Project1.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="FSDLL;Project1"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="FSDLL:Clean;Project1:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="FSDLL:Make;Project1:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
