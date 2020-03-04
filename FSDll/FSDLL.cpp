@@ -8,6 +8,7 @@
 #include <wchar.h>
 #include <algorithm>
 #include "FSDLL.h"
+#include<locale.h>
 
 using namespace std;
 
@@ -31,6 +32,8 @@ void PrintBootSectInfo(NTFS_BootRecord _check)
 	printf("Clusters Per Index Buffer: %d\n", _check.clusterPerIndexBuff);
 	printf("Volume Serial Number: %dl\n", _check.volumeSerialNumber);
 	printf("End of Sector Marker: 0x%X\n", _check.endMarker);
+	printf("=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*\n");
+
 
 	/*printf("Информация о диске:\n");
 	printf("=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*\n");
@@ -49,7 +52,15 @@ void PrintBootSectInfo(NTFS_BootRecord _check)
 	printf("Количество кластеров в сегменте записи о файле: %d\n", _check.clusterPerFileRecordSegm);
 	printf("Количество кластеров в буфере индексов: %d\n", _check.clusterPerIndexBuff);
 	printf("Серийный номер диска: %dl\n", _check.volumeSerialNumber);
-	printf("Маркер конца сектора: 0x%X\n", _check.endMarker); */
+	printf("Маркер конца сектора: 0x%X\n", _check.endMarker);  */
+}
+void AuthorName()
+{
+	string authorName = "Sergey Yasskiy";
+	int year = 2020;
+	cout << "=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*"<< endl;
+	cout << "Powered by " << authorName <<" " << year << endl;
+	cout << "=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*"<< endl;
 }
 string FindFSName(string diskName)
 {
@@ -60,6 +71,8 @@ string FindFSName(string diskName)
 	DWORD FileSF;
 
 	string forVolumeInf = diskName + ":\\";
+
+	AuthorName();
 
 
 	if (GetVolumeInformationA(forVolumeInf.c_str(), NameBuffer, sizeof(NameBuffer),

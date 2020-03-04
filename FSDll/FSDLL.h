@@ -11,6 +11,7 @@
 
 using namespace std;
 
+
 #pragma pack(1)
 typedef struct
 {

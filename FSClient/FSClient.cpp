@@ -15,10 +15,12 @@ typedef char _TCHAR;
 #include <wchar.h>
 #include <algorithm>
 #include <string>
+#include<locale.h>
 #include "FSDLL.h"
 #include "FSDLL.cpp"
 
 using namespace std;
+
 
 int main()
 {
