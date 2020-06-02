@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
-  <Transactions/>
-  <Default.Personality>
-    <Projects ActiveProject="C:\Users\Bryak\Documents\GitHub\FS-Check-clone\FSClient\Project1.cbproj"/>
-  </Default.Personality>
+	<Transactions/>
+	<Default.Personality>
+		<Projects ActiveProject="C:\Users\Bryak\Documents\GitHub\FS-Check-clone\FSDll\FSDLL.cbproj"/>
+	</Default.Personality>
 </BorlandProject>

@@ -14,7 +14,7 @@ using namespace std;
 
 void PrintBootSectInfo(NTFS_BootRecord _check)
 {
-	printf("NTFS Disk Information:\n");
+	printf("Disk Information:\n");
 	printf("=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*\n");
 	printf("Assembly Instruction to jump to Boot code: 0x%X\n", _check.jumpCode);
 	printf("OEM Name: %s\n", _check.oemID);

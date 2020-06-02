@@ -40,3 +40,38 @@ typedef struct
 	BYTE bootstrap[426];
 	WORD endMarker;
 } NTFS_BootRecord;
+
+// Create base class
+class FileSystem {
+public:
+	FileSystem(string fileName) {
+
+		this->fileName = fileName;
+	}
+	virtual void bootInfo() {};
+private:
+	string fileName;
+};
+
+// Creating a subclass FileSystem
+class NTFS : public FileSystem {
+public:
+	NTFS(string fileName) : FileSystem(fileName) {
+
+		this->fileName = fileName;
+	}
+	void bootInfo() override;
+private:
+	string fileName;
+	void PrintBootSectInfo(NTFS_BootRecord _check);
+	bool setPointerToBegin(HANDLE fileHandle);
+};
+
+// Creating a factory
+class FileSystemFactory {
+public:
+	FileSystem* create(string fileName);
+private:
+	string checkFS(string fileName);
+};
+

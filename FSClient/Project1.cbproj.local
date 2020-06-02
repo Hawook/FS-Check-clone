@@ -2,14 +2,14 @@
 <BorlandProject>
 	<Transactions>
     <Transaction>1899.12.30 00:00:00.000.498,=C:\Users\Bryak\Documents\GitHub\FS-Check-clone\FSDll\FSDLL.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.264,C:\Users\Bryak\Documents\Embarcadero\Studio\Projects\FSClient.h=C:\Users\Bryak\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.101,C:\Users\Bryak\Documents\Embarcadero\Studio\Projects\FSClient.h=C:\Users\Bryak\Documents\GitHub\FS-Check-clone\FSClient\FSClient.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.264,C:\Users\Bryak\Documents\Embarcadero\Studio\Projects\Project1PCH1.h=C:\Users\Bryak\Documents\Embarcadero\Studio\Projects\FSClient.h</Transaction>
     <Transaction>1899.12.30 00:00:00.000.453,=C:\Users\Bryak\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
     <Transaction>1899.12.30 00:00:00.000.963,=C:\Users\Bryak\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.843,C:\Users\Bryak\Documents\GitHub\FS-Check-clone\FSClient\Project1.cbproj=C:\Users\Bryak\Documents\Embarcadero\Studio\Projects\Project1.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.843,C:\Users\Bryak\Documents\Embarcadero\Studio\Projects\Project1.cbproj=C:\Users\Bryak\Documents\GitHub\FS-Check-clone\FSClient\Project1.cbproj</Transaction>
     <Transaction>1899.12.30 00:00:00.000.999,=C:\Users\Bryak\Documents\Embarcadero\Studio\Projects\File1.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.672,C:\Users\Bryak\Documents\GitHub\FS-Check-clone\FSClient\FSClient.cpp=C:\Users\Bryak\Documents\Embarcadero\Studio\Projects\FSClient.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.204,C:\Users\Bryak\Documents\Embarcadero\Studio\Projects\FSClient.cpp=C:\Users\Bryak\Documents\Embarcadero\Studio\Projects\File1.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.101,C:\Users\Bryak\Documents\GitHub\FS-Check-clone\FSClient\FSClient.h=C:\Users\Bryak\Documents\Embarcadero\Studio\Projects\FSClient.h</Transaction>
-    <Transaction>2020.03.01 13:10:04.716,C:\Users\Bryak\Documents\GitHub\FS-Check-clone\FSClient\FSClient.h=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.204,C:\Users\Bryak\Documents\Embarcadero\Studio\Projects\File1.cpp=C:\Users\Bryak\Documents\Embarcadero\Studio\Projects\FSClient.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.672,C:\Users\Bryak\Documents\Embarcadero\Studio\Projects\FSClient.cpp=C:\Users\Bryak\Documents\GitHub\FS-Check-clone\FSClient\FSClient.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.716,C:\Users\Bryak\Documents\GitHub\FS-Check-clone\FSClient\FSClient.h=</Transaction>
   </Transactions>
 </BorlandProject>
