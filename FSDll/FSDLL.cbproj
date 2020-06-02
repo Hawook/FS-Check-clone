@@ -113,6 +113,9 @@
             <BuildOrder>0</BuildOrder>
             <PCH>true</PCH>
         </PCHCompile>
+        <CppCompile Include="FSFactory.cpp">
+            <BuildOrder>6</BuildOrder>
+        </CppCompile>
         <CppCompile Include="NTFS.cpp">
             <BuildOrder>2</BuildOrder>
         </CppCompile>
